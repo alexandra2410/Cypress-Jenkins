@@ -1,0 +1,15 @@
+{
+  "make": {
+    "id": "ckl2phsabijs71623vk0",
+    "name": "Lamborghini",
+    "image": "Lamborghini-Logo.png",
+    "votes": 8657
+  },
+  "model": {
+    "id": "ckl2phsabijs71623vk0|ckl2phsabijs71623vqg",
+    "make": "Lamborghini",
+    "name": "Diablo",
+    "image": "Diablo.jpg",
+    "votes": 2836
+  }
+}

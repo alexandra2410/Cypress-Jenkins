@@ -1,0 +1,29 @@
+{
+  "name": "cypress-e2e",
+  "version": "1.0.0",
+  "description": "e2e framework testing cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cy:open": "cypress open",
+    "cy:runDefaul": "npx cypress run --spec 'cypress/e2e/Retry-Ability.cy.js' --headed ",
+    "cy:runFirefox": "npx cypress run --spec 'cypres/e2e/pom/*cy.js' --headed --browser firefox",
+    "cy:runFirefoxHeadless": "npx cypress run --spec 'cypress/e2e/pom/*.cy.js' --headless --browser firefox",
+    "cy:runChrome": "npx cypress run --spec 'cypres/e2e/pom/*cy.js' --headed --browser chrome",
+    "cy:browserstack": "browserstack-cypress run --sync --spec cypress/e2e/homeSauce.cy.js"
+  },
+  "keywords": [
+    "e2e",
+    "automation",
+    "framework",
+    "cypress"
+  ],
+  "author": "QAlaub",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/grep": "^4.1.0",
+    "cypress": "^13.14.2",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-xpath": "^2.0.1"
+  }
+}
