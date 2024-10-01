@@ -2,7 +2,7 @@ pipeline{
     agent any 
 
     parameters {
-        string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Ej: cypress/e2e/pom/*.cy.js")
+        string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Ej: cypress/e2e/*.cy.js")
         choice(name: "BROWSER", choices: ['chrome', 'firefox'], description: "Escoja un browser en donde ejecutar sus scripts.")
     }
 
@@ -13,7 +13,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "Buidinf application"
+                echo "Buiding application"
             }
         }
         stage('Testing'){
@@ -31,7 +31,7 @@ pipeline{
 
     post{
         always{
-           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress\\reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         }
     }
 }
