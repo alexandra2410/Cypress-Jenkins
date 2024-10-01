@@ -6,10 +6,6 @@ pipeline{
         choice(name: "BROWSER", choices: ['chrome', 'firefox'], description: "Escoja un browser en donde ejecutar sus scripts.")
     }
 
-    options{
-        ansicolor('xterm')
-    }
-
     stages{
         stage('Build'){
             steps{
