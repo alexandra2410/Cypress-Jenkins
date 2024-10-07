@@ -21,6 +21,8 @@ pipeline {
             steps {
                 // Instalar dependencias de npm
                 bat "npm install --legacy-peer-deps" // Usa `sh` si estás en Linux/macOS
+                // Instalar Cypress binario
+                bat "npx cypress install"
                 
                 // Ejecutar Cypress con los parámetros de usuario
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}" // Usa `sh` en Linux/macOS
