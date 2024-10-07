@@ -25,7 +25,7 @@ pipeline {
                 bat "npx cypress install"
                 
                 bat "dir cypress\\e2e"
-                bat "npx cypress run --browser chrome --spec 'cypress/e2e/ApiTesting.cy.js'"
+                bat "npx cypress run --browser chrome --spec 'cypress/test/ApiTesting.cy.js'"
                           }
         }
 
