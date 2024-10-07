@@ -1,23 +1,118 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2024-09-30T17:22:43.070Z",
-    "end": "2024-09-30T17:22:43.071Z",
-    "duration": 1,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2024-10-05T18:07:37.094Z",
+    "end": "2024-10-05T18:07:41.164Z",
+    "duration": 4070,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "2624437e-27c1-431d-8580-27655683bf6d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ApiTestDemo.cy.js",
+      "file": "cypress\\e2e\\ApiTestDemo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2a4c6d3a-d4e1-4982-9486-6cd1079149c5",
+          "title": "Basic API Testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test get",
+              "fullTitle": "Basic API Testing test get",
+              "timedOut": null,
+              "duration": 1680,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/users/current',\n  headers: {\n    'authorization': 'Bearer eyJraWQiOiJwNDBtYVJYRVg0VmFFQnpTbzUrSDRUd2UxcTF4cUpMcGEwQ3lPaVNmUTZBPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxMzU1YWZlZi1mZjU0LTRkYWYtYTYwYy01NWEyNDUwMzdiYzAiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfRVRUSUtjU3NvIiwiY2xpZW50X2lkIjoiMnQxbXV0Z2M0YXVpdWhvcWltajJjdDBoOG4iLCJvcmlnaW5fanRpIjoiMDMyNmVjMjYtYmEwYS00ZjdiLWExZWMtNGJiYjIzNjQ5MzMyIiwiZXZlbnRfaWQiOiIyOGE1M2QxMi04OWVkLTRjYmQtODVlNi01Y2VjOWYxNDE5ZDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNzI2NzY5MzgxLCJleHAiOjE3MjY3NzI5ODEsImlhdCI6MTcyNjc2OTM4MSwianRpIjoiZjEwZWRmYWEtYmEwZi00YjE4LTgyNDktNTE4MzkxZGM3NmNjIiwidXNlcm5hbWUiOiJhbGV4YW0wNDUifQ.bQqPjeeDCYLYmJwPohE-9SjzivVVPzWRIDBf6j6Vr1NUQPG8GR7ASRQ9BxRyys19gdFvP_oXILGVl_iu8RkoEd7Q9H2urOhWM2_nwLHW2_5wspjw86A3-9p-2qXqqxvYGE1c8zWHf34M12jvWxWwV3fVbI9ABHIU8FW66jsPavdIWS_ZZ5mJ1_hFsEuLhTHeUFllWj39xJCUnof-sDDkvAIqFb0N3LVqQuWQIWzI8SxQs7EL7dg-kxRDaICUnEYCBhe2ijG4kXQ27ovbquYfcyhocRFCaBFY9R8TrcLFImAqjKBbx9I7ovKZ9GOz3mSlSphbS5-p37KTu7eCkPA3XA'\n  }\n}).then(response => {\n  // Verificar que la respuesta tiene el código de estado correcto\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('firstName', 'Alexandra');\n  expect(response.body).to.have.property('lastName', 'Martinez');\n  expect(response.body).to.have.property('isAdmin', false);\n  expect(response.body.firstName.length).to.eq(9);\n  // Puedes añadir más validaciones según lo que devuelva la respuesta\n  cy.log(response.body);\n});",
+              "err": {},
+              "uuid": "ffe5f99d-9e3e-4e0e-a391-d7ac99706a43",
+              "parentUUID": "2a4c6d3a-d4e1-4982-9486-6cd1079149c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar el metodo PUT",
+              "fullTitle": "Basic API Testing Validar el metodo PUT",
+              "timedOut": null,
+              "duration": 881,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PUT',\n  url: 'https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/users/profile',\n  headers: {\n    'authorization': 'Bearer eyJraWQiOiJwNDBtYVJYRVg0VmFFQnpTbzUrSDRUd2UxcTF4cUpMcGEwQ3lPaVNmUTZBPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxMzU1YWZlZi1mZjU0LTRkYWYtYTYwYy01NWEyNDUwMzdiYzAiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfRVRUSUtjU3NvIiwiY2xpZW50X2lkIjoiMnQxbXV0Z2M0YXVpdWhvcWltajJjdDBoOG4iLCJvcmlnaW5fanRpIjoiMDMyNmVjMjYtYmEwYS00ZjdiLWExZWMtNGJiYjIzNjQ5MzMyIiwiZXZlbnRfaWQiOiIyOGE1M2QxMi04OWVkLTRjYmQtODVlNi01Y2VjOWYxNDE5ZDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNzI2NzY5MzgxLCJleHAiOjE3MjY3NzI5ODEsImlhdCI6MTcyNjc2OTM4MSwianRpIjoiZjEwZWRmYWEtYmEwZi00YjE4LTgyNDktNTE4MzkxZGM3NmNjIiwidXNlcm5hbWUiOiJhbGV4YW0wNDUifQ.bQqPjeeDCYLYmJwPohE-9SjzivVVPzWRIDBf6j6Vr1NUQPG8GR7ASRQ9BxRyys19gdFvP_oXILGVl_iu8RkoEd7Q9H2urOhWM2_nwLHW2_5wspjw86A3-9p-2qXqqxvYGE1c8zWHf34M12jvWxWwV3fVbI9ABHIU8FW66jsPavdIWS_ZZ5mJ1_hFsEuLhTHeUFllWj39xJCUnof-sDDkvAIqFb0N3LVqQuWQIWzI8SxQs7EL7dg-kxRDaICUnEYCBhe2ijG4kXQ27ovbquYfcyhocRFCaBFY9R8TrcLFImAqjKBbx9I7ovKZ9GOz3mSlSphbS5-p37KTu7eCkPA3XA'\n  },\n  body: {\n    \"username\": \"alexam045\",\n    \"firstName\": \"Alexandra\",\n    \"lastName\": \"Martinez\",\n    \"gender\": \"\",\n    \"age\": \"22\",\n    \"address\": \"\",\n    \"phone\": \"045\",\n    \"hobby\": \"\",\n    \"currentPassword\": \"\",\n    \"newPassword\": \"\",\n    \"newPasswordConfirmation\": \"\"\n  }\n}).then(response => {\n  // Verificar que la respuesta tiene el código de estado correcto\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "ea9bab58-b970-44c8-a712-a6e2b26dabe4",
+              "parentUUID": "2a4c6d3a-d4e1-4982-9486-6cd1079149c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validar con un GET que se puede cambiar la edad",
+              "fullTitle": "Basic API Testing validar con un GET que se puede cambiar la edad",
+              "timedOut": null,
+              "duration": 1151,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/users/profile',\n  headers: {\n    'authorization': 'Bearer eyJraWQiOiJwNDBtYVJYRVg0VmFFQnpTbzUrSDRUd2UxcTF4cUpMcGEwQ3lPaVNmUTZBPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxMzU1YWZlZi1mZjU0LTRkYWYtYTYwYy01NWEyNDUwMzdiYzAiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGhlYXN0LTIuYW1hem9uYXdzLmNvbVwvYXAtc291dGhlYXN0LTJfRVRUSUtjU3NvIiwiY2xpZW50X2lkIjoiMnQxbXV0Z2M0YXVpdWhvcWltajJjdDBoOG4iLCJvcmlnaW5fanRpIjoiMDMyNmVjMjYtYmEwYS00ZjdiLWExZWMtNGJiYjIzNjQ5MzMyIiwiZXZlbnRfaWQiOiIyOGE1M2QxMi04OWVkLTRjYmQtODVlNi01Y2VjOWYxNDE5ZDMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNzI2NzY5MzgxLCJleHAiOjE3MjY3NzI5ODEsImlhdCI6MTcyNjc2OTM4MSwianRpIjoiZjEwZWRmYWEtYmEwZi00YjE4LTgyNDktNTE4MzkxZGM3NmNjIiwidXNlcm5hbWUiOiJhbGV4YW0wNDUifQ.bQqPjeeDCYLYmJwPohE-9SjzivVVPzWRIDBf6j6Vr1NUQPG8GR7ASRQ9BxRyys19gdFvP_oXILGVl_iu8RkoEd7Q9H2urOhWM2_nwLHW2_5wspjw86A3-9p-2qXqqxvYGE1c8zWHf34M12jvWxWwV3fVbI9ABHIU8FW66jsPavdIWS_ZZ5mJ1_hFsEuLhTHeUFllWj39xJCUnof-sDDkvAIqFb0N3LVqQuWQIWzI8SxQs7EL7dg-kxRDaICUnEYCBhe2ijG4kXQ27ovbquYfcyhocRFCaBFY9R8TrcLFImAqjKBbx9I7ovKZ9GOz3mSlSphbS5-p37KTu7eCkPA3XA'\n  }\n}).then(response => {\n  // Verificar que la respuesta tiene el código de estado correcto\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('age', '22');\n  cy.log(response.body);\n});",
+              "err": {},
+              "uuid": "e9b3fddd-e877-415d-9760-50a0824f2736",
+              "parentUUID": "2a4c6d3a-d4e1-4982-9486-6cd1079149c5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ffe5f99d-9e3e-4e0e-a391-d7ac99706a43",
+            "ea9bab58-b970-44c8-a712-a6e2b26dabe4",
+            "e9b3fddd-e877-415d-9760-50a0824f2736"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3712,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {
