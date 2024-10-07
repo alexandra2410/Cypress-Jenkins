@@ -24,14 +24,15 @@ pipeline {
                 // Instalar Cypress binario
                 bat "npx cypress install"
                 
-                // Ejecutar Cypress con los parámetros de usuario
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}" // Usa `sh` en Linux/macOS
-            }
+                bat "dir cypress\\e2e"
+                bat "npx cypress run --browser chrome --spec 'cypress/e2e/ApiTesting.cy.js'"
+                          }
         }
 
         stage('Deploy') {
             steps {
                 echo "Deploying the application"
+                
             }
         }
 }
