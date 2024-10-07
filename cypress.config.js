@@ -9,6 +9,7 @@ module.exports = defineConfig({
       return config;
     },
   },
+  "integrationFolder": "cypress/test",
   "env": {
     "grepFilterSpecs": false
   }
