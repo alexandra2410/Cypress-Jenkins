@@ -20,7 +20,7 @@ pipeline {
         stage('Testing') {
             steps {
                 // Instalar dependencias de npm
-                bat "npm install" // Usa `sh` si estás en Linux/macOS
+                bat "npm install --legacy-peer-deps" // Usa `sh` si estás en Linux/macOS
                 
                 // Ejecutar Cypress con los parámetros de usuario
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}" // Usa `sh` en Linux/macOS
