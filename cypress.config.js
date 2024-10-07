@@ -3,13 +3,13 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
+    specPattern: 'cypress/test/**/*.cy.js',
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
       require('@cypress/grep/src/plugin')(config);
       return config;
     },
   },
-  "integrationFolder": "cypress/test",
   "env": {
     "grepFilterSpecs": false
   }
