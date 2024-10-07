@@ -10,6 +10,6 @@ module.exports = defineConfig({
     },
   },
   "env": {
-    "grepFilterSpecs": true
+    "grepFilterSpecs": false
   }
 });
