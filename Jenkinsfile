@@ -24,7 +24,7 @@ pipeline {
                 // Instalar Cypress binario
                 bat "npx cypress install"
                 
-                bat "dir cypress\\e2e"
+                bat "dir cypress\\test"
                 bat "npx cypress run --browser chrome --spec 'cypress/test/ApiTesting.cy.js'"
                           }
         }
