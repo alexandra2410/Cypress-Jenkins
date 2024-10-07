@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Validar un POST por API' ,'@Post', () => {
+describe('Validar un POST por API', () => {
   it('Debería registrar un usuario usando un POST request ', () => {
     cy.request({
       method: 'POST',
