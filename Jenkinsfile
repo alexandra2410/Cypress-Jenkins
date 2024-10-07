@@ -34,8 +34,6 @@ pipeline {
                 echo "Deploying the application"
             }
         }
-        environment {
-    CYPRESS_CACHE_FOLDER = "${env.WORKSPACE}/.cache/Cypress"
 }
 
     }
