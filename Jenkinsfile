@@ -5,10 +5,10 @@ pipeline {
         nodejs "NodeJS"  // Mueve la configuración de Node.js aquí.
     }
 
-    parameters {
+    //parameters {
         //string(name: "SPEC", defaultValue: "cypress/e2e/**/**", description: "Ej: cypress/e2e/*.cy.js")
         //choice(name: "BROWSER", choices: ['chrome', 'firefox'], description: "Escoja un browser en donde ejecutar sus scripts.")
-    }
+    //}
 
     stages {
         stage('Build') {
