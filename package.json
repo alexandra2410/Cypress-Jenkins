@@ -4,8 +4,10 @@
   "description": "e2e framework testing cypress",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "cypress run",
     "cy:open": "cypress open",
+    "merge-reports": "mochawesome-merge cypress/reports/*.json > cypress/reports/merged-report.json",
+    "generate-report": "marge cypress/reports/merged-report.json -f report -o cypress/reports/html",
     "cy:runDefaul": "npx cypress run --spec 'cypress/e2e/Retry-Ability.cy.js' --headed ",
     "cy:runFirefox": "npx cypress run --spec 'cypres/e2e/pom/*cy.js' --headed --browser firefox",
     "cy:runFirefoxHeadless": "npx cypress run --spec 'cypress/e2e/pom/*.cy.js' --headless --browser firefox",

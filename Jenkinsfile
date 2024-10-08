@@ -26,21 +26,34 @@ pipeline {
                 
                 bat "dir cypress\\test"
                 bat "npx cypress run --browser chrome --spec \"cypress/test/ApiTesting.cy.js\""
+                bat 'npm run merge-reports'
+                bat 'npm run generate-report'
                           }
         }
+        stage('Report') {
+            steps {
+                publishHTML([allowMissing: false,
+                             alwaysLinkToLastBuild: false,
+                             keepAll: true,
+                             reportDir: 'cypress/reports/html',
+                             reportFiles: 'report.html',
+                             reportName: 'Mochawesome Report'])
+            }
+        }
 
-        stage('Deploy') {
+        /* stage('Deploy') {
             steps {
                 echo "Deploying the application"
                 
             }
-        }
+        } */
     }
 
     post {
         always {
             // Publicar reporte HTML de Cypress
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            //publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            echo 'Cleaning up...'
         }
   }
 }
