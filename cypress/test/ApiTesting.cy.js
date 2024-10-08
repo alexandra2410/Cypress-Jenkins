@@ -6,7 +6,7 @@ describe('Validar un POST por API', () => {
       method: 'POST',
       url: 'https://k51qryqov3.execute-api.ap-southeast-2.amazonaws.com/prod/users', // Endpoint de la API si está disponible
       body: {
-        username: 'nuevoUsuarioAPI8',
+        username: 'nuevoUsuarioAPI9',
         firstName: 'John',
         lastName: 'Doe',
         password: 'Qwe1234@',
