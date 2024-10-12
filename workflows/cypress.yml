@@ -43,3 +43,8 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+     - name: Run Cypress tests with recording
+        run: npm run cy:run
+        env:
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
