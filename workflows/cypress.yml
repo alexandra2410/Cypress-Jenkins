@@ -1,0 +1,45 @@
+name: Cypress Tests
+
+# Definir en qué eventos se ejecutarán las pruebas
+on:
+  push:
+    branches:
+      - yt
+  pull_request:
+    branches:
+      - yt
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest # Define el sistema operativo para ejecutar las pruebas
+
+    steps:
+      - name: Checkout code # Clona el repositorio
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js  # Configura Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Versión de Node.js que quieres usar
+
+      - name: Install dependencies # Instala dependencias del proyecto
+        run: npm install
+
+      - name: Run Cypress tests # Ejecuta las pruebas de Cypress
+        run: npm run cy:run # Asegúrate de que este comando esté en tu package.json
+
+      # Subir capturas de pantalla si hay errores
+      - name: Upload Cypress screenshots
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      # Subir videos si hay errores
+      - name: Upload Cypress videos
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-videos
+          path: cypress/videos

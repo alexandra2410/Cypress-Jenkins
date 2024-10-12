@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "cy:runDefaul": "npx cypress run --spec 'cypress/e2e/Retry-Ability.cy.js' --headed ",
     "cy:runFirefox": "npx cypress run --spec 'cypres/e2e/pom/*cy.js' --headed --browser firefox",
     "cy:runFirefoxHeadless": "npx cypress run --spec 'cypress/e2e/pom/*.cy.js' --headless --browser firefox",
