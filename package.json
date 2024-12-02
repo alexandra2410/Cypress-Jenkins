@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "cy:runDefaul": "npx cypress run --spec 'cypress/e2e/Retry-Ability.cy.js' --headed ",
     "cy:runFirefox": "npx cypress run --spec 'cypres/e2e/pom/*cy.js' --headed --browser firefox",
     "cy:runFirefoxHeadless": "npx cypress run --spec 'cypress/e2e/pom/*.cy.js' --headless --browser firefox",
@@ -21,8 +22,8 @@
   "author": "QAlaub",
   "license": "ISC",
   "devDependencies": {
-    "@cypress/grep": "^4.1.0",
-    "cypress": "^13.14.2",
+   "cypress": "^13.15.0",
+   "@cypress/grep": "^4.1.0",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1"
   }

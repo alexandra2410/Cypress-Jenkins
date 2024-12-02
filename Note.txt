@@ -1,0 +1,17 @@
+Explicación del archivo
+on: Define cuándo se ejecuta la acción (en push a la rama main y en los pull requests a main).
+jobs: Define los trabajos que GitHub Actions ejecutará. En este caso, hay un trabajo llamado cypress-run.
+runs-on: Especifica el entorno que se usará para ejecutar las pruebas. Aquí estamos usando ubuntu-latest.
+steps: Define los pasos del trabajo:
+Checkout: Descargar el código del repositorio.
+
+Set up Node.js: Configura la versión de Node.js.
+
+Install dependencies: Instala las dependencias de tu proyecto.
+
+Run Cypress tests: Ejecuta las pruebas de Cypress. 
+El comando npm run cy:run asume que tienes un script en tu package.json para ejecutar Cypress, como:
+"scripts": {
+  "cy:run": "cypress run"
+}
+Upload artifacts: Si las pruebas fallan, sube capturas de pantalla y videos de los fallos como artefactos para que puedas revisarlos más tarde.

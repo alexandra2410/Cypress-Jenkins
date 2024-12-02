@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-05T18:08:11.697Z",
+    "end": "2024-10-05T18:08:31.617Z",
+    "duration": 19920,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88674ab1-4556-4e4b-86de-3432c8beeaa1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\assertions.cy.js",
+      "file": "cypress\\e2e\\assertions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eeeb302b-165e-4368-b935-2d42cda74219",
+          "title": "ASSERTIONS DEMO",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TDD ASSERTIONS",
+              "fullTitle": "ASSERTIONS DEMO TDD ASSERTIONS",
+              "timedOut": null,
+              "duration": 6536,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://practice-automation.com/form-fields/');\ncy.log('LEGTH CHECK');\ncy.get('input[name=\"fav_drink\"]').should('have.length', 5);\ncy.log('CLASS CHECK');\ncy.get('input[type=\"checkbox\"]').eq(2).should('have.value', 'Coffee');\ncy.log('TEXT CHECK');\ncy.get('input[type=\"checkbox\"]').eq(2).click({\n  force: false\n});\ncy.get('.red_txt').should('have.css', 'color', 'rgb(255, 0, 0)');",
+              "err": {},
+              "uuid": "bdaa0644-1683-4bf6-9105-51e4c10ed5e5",
+              "parentUUID": "eeeb302b-165e-4368-b935-2d42cda74219",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "BDD ASSERTIONS",
+              "fullTitle": "ASSERTIONS DEMO BDD ASSERTIONS",
+              "timedOut": null,
+              "duration": 4452,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('CLASS Y LENGTH');\ncy.get('input[type=\"checkbox\"]').should($input => {\n  expect($input).to.have.lengthOf(5);\n  expect($input).to.have.class('Coffee');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"checkbox\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"checkbox\"]`, but never found it.\n    at Context.eval (webpack://cypress-e2e/./cypress/e2e/assertions.cy.js:22:39)",
+                "diff": null
+              },
+              "uuid": "73c408b2-d058-4095-81ec-93cbfcad0c12",
+              "parentUUID": "eeeb302b-165e-4368-b935-2d42cda74219",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bdaa0644-1683-4bf6-9105-51e4c10ed5e5"
+          ],
+          "failures": [
+            "73c408b2-d058-4095-81ec-93cbfcad0c12"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10988,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
